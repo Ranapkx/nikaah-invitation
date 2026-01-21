@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nikah Invitation | Jaseem & Haifa</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&family=Great+Vibes&family=Aref+Ruqaa:wght@400;700&family=Amiri:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- ========================================
+         REALISTIC ENVELOPE OPENING ANIMATION
+         ======================================== -->
+    <div class="envelope-wrapper" id="envelopeWrapper">
+        <!-- Elegant background with subtle pattern -->
+        <div class="envelope-bg">
+            <div class="bg-gradient"></div>
+            <div class="bg-pattern"></div>
+            <div class="floating-petals">
+                <span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+            </div>
+        </div>
+
+        <!-- Golden corner decorations -->
+        <div class="gold-corner top-left">
+            <svg viewBox="0 0 100 100"><path d="M0 0 L100 0 L100 10 L10 10 L10 100 L0 100 Z" fill="url(#goldGradient)"/></svg>
+        </div>
+        <div class="gold-corner top-right">
+            <svg viewBox="0 0 100 100"><path d="M0 0 L100 0 L100 100 L90 100 L90 10 L0 10 Z" fill="url(#goldGradient)"/></svg>
+        </div>
+        <div class="gold-corner bottom-left">
+            <svg viewBox="0 0 100 100"><path d="M0 0 L10 0 L10 90 L100 90 L100 100 L0 100 Z" fill="url(#goldGradient)"/></svg>
+        </div>
+        <div class="gold-corner bottom-right">
+            <svg viewBox="0 0 100 100"><path d="M0 90 L90 90 L90 0 L100 0 L100 100 L0 100 Z" fill="url(#goldGradient)"/></svg>
+        </div>
+
+        <!-- SVG Definitions for gradients -->
+        <svg width="0" height="0" style="position:absolute">
+            <defs>
+                <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#D4AF37"/>
+                    <stop offset="50%" style="stop-color:#F4E4BC"/>
+                    <stop offset="100%" style="stop-color:#B8860B"/>
+                </linearGradient>
+            </defs>
+        </svg>
+
+        <div class="envelope-container">
+            <!-- 3D Realistic Envelope -->
+            <div class="envelope-3d" id="envelope">
+                <!-- Back panel of envelope -->
+                <div class="envelope-back">
+                    <div class="paper-texture"></div>
+                </div>
+
+                <!-- Invitation Card -->
+                <div class="invitation-card" id="envelopeCard">
+                    <div class="card-texture"></div>
+                    <div class="card-gold-border"></div>
+                    <div class="card-inner">
+                        <div class="card-header-ornament">
+                            <svg viewBox="0 0 200 30" fill="none">
+                                <path d="M0 15 Q50 0, 100 15 Q150 30, 200 15" stroke="url(#goldGradient)" stroke-width="1" fill="none"/>
+                                <circle cx="100" cy="15" r="5" fill="url(#goldGradient)"/>
+                            </svg>
+                        </div>
+                        <p class="card-bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+                        <p class="card-invitation-text">You are cordially invited to celebrate the Nikah of</p>
+                        <div class="card-names-section">
+                            <h2 class="card-groom">Jaseem</h2>
+                            <span class="card-ampersand">&</span>
+                            <h2 class="card-bride">Haifa</h2>
+                        </div>
+                        <p class="card-arabic-names">جاسم و هيفاء</p>
+                        <div class="card-divider">
+                            <span></span>
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                            </svg>
+                            <span></span>
+                        </div>
+                        <div class="card-date-section">
+                            <span class="card-day">Saturday</span>
+                            <span class="card-full-date">January 31, 2026</span>
+                            <span class="card-hijri">2 Rajab 1447 H</span>
+                        </div>
+                        <div class="card-footer-ornament">
+                            <svg viewBox="0 0 200 30" fill="none">
+                                <path d="M0 15 Q50 30, 100 15 Q150 0, 200 15" stroke="url(#goldGradient)" stroke-width="1" fill="none"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Front panel with flap -->
+                <div class="envelope-front">
+                    <div class="paper-texture"></div>
+                    <div class="envelope-front-design">
+                        <div class="front-ornament top-ornament"></div>
+                        <div class="front-ornament bottom-ornament"></div>
+                    </div>
+                </div>
+
+                <!-- Envelope flap (triangular top) -->
+                <div class="envelope-flap">
+                    <div class="flap-inner">
+                        <div class="paper-texture"></div>
+                        <div class="flap-design"></div>
+                    </div>
+                </div>
+
+                <!-- Realistic Wax Seal -->
+                <div class="wax-seal" id="waxSeal">
+                    <div class="seal-drips">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <div class="seal-body">
+                        <div class="seal-shine"></div>
+                        <div class="seal-emboss">
+                            <span class="seal-initials">J & H</span>
+                        </div>
+                        <div class="seal-edge"></div>
+                    </div>
+                    <div class="seal-shadow"></div>
+                </div>
+
+                <!-- Seal breaking pieces (shown on open) -->
+                <div class="seal-pieces">
+                    <span class="piece piece-1"></span>
+                    <span class="piece piece-2"></span>
+                    <span class="piece piece-3"></span>
+                    <span class="piece piece-4"></span>
+                </div>
+            </div>
+
+            <!-- Tap instruction -->
+            <div class="open-instruction" id="openText">
+                <div class="instruction-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+                        <path d="M12 8v4l3 3"/>
+                    </svg>
+                </div>
+                <span class="instruction-text">Tap the seal to open</span>
+                <div class="instruction-hint">
+                    <span class="tap-ring"></span>
+                    <span class="tap-ring delay"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================
+         MAIN INVITATION CONTENT
+         ======================================== -->
+    <div class="invitation-content" id="invitationContent">
+
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-bg-overlay"></div>
+            <div class="hero-particles">
+                <span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span>
+            </div>
+
+            <div class="hero-content">
+                <div class="hero-top" data-aos="fade-down" data-aos-duration="1200">
+                    <p class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+                    <p class="bismillah-english">In the name of Allah, the Most Gracious, the Most Merciful</p>
+                </div>
+
+                <div class="hero-center" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="1000">
+                    <p class="wedding-label">Nikah Invitation</p>
+                    <div class="couple-names-wrapper">
+                        <h1 class="groom-name">Jaseem</h1>
+                        <span class="names-separator">&</span>
+                        <h1 class="bride-name">Haifa</h1>
+                    </div>
+                    <p class="arabic-names">جاسم و هيفاء</p>
+                </div>
+
+                <div class="hero-bottom" data-aos="fade-up" data-aos-delay="800">
+                    <div class="save-the-date">
+                        <span class="std-label">Save the Date</span>
+                        <div class="std-date">
+                            <span class="std-day">31</span>
+                            <div class="std-month-year">
+                                <span>January</span>
+                                <span>2026</span>
+                            </div>
+                        </div>
+                        <span class="std-hijri">2 Rajab 1447 H</span>
+                    </div>
+                </div>
+
+                <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="1200">
+                    <div class="scroll-line"></div>
+                    <span>Scroll</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quran Verse Section -->
+        <section class="verse-section" id="verse">
+            <div class="verse-container">
+                <div class="verse-icon" data-aos="zoom-in">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                </div>
+                <p class="verse-arabic" data-aos="fade-up" data-aos-delay="200">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً</p>
+                <p class="verse-english" data-aos="fade-up" data-aos-delay="400">"And among His signs is that He created for you spouses from among yourselves, that you may find tranquility in them, and He placed between you affection and mercy."</p>
+                <p class="verse-reference" data-aos="fade-up" data-aos-delay="600">— Surah Ar-Rum, 30:21</p>
+            </div>
+        </section>
+
+
+        <!-- Couple Section -->
+        <section class="couple-section" id="couple">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">With Love</span>
+                <h2>The Couple</h2>
+                <div class="header-line"></div>
+            </div>
+
+            <div class="couple-container">
+                <!-- Groom -->
+                <div class="person-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="person-image">
+                        <div class="image-placeholder">
+                            <span>J</span>
+                        </div>
+                    </div>
+                    <div class="person-info">
+                        <span class="role">The Groom</span>
+                        <h3 class="person-name">Jaseem</h3>
+                        <p class="arabic-name">جاسم</p>
+                    </div>
+                </div>
+
+                <!-- Center Heart -->
+                <div class="couple-heart" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="heart-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    </div>
+                </div>
+
+                <!-- Bride -->
+                <div class="person-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="person-image">
+                        <div class="image-placeholder">
+                            <span>H</span>
+                        </div>
+                    </div>
+                    <div class="person-info">
+                        <span class="role">The Bride</span>
+                        <h3 class="person-name">Haifa</h3>
+                        <p class="arabic-name">هيفاء</p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="invitation-message" data-aos="fade-up" data-aos-delay="500">
+                The family of the bride cordially invites you<br>
+                to celebrate the Nikah ceremony
+            </p>
+        </section>
+
+        <!-- Event Details Section -->
+        <section class="event-section" id="events">
+            <div class="section-header light" data-aos="fade-up">
+                <span class="section-subtitle">Join Us</span>
+                <h2>Wedding Events</h2>
+                <div class="header-line"></div>
+            </div>
+
+            <div class="events-grid">
+                <!-- Nikah Ceremony -->
+                <div class="event-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="event-header">
+                        <div class="event-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                        </div>
+                        <h3>Nikah Ceremony</h3>
+                        <p class="event-arabic">عقد النكاح</p>
+                    </div>
+                    <div class="event-details">
+                        <div class="detail-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            <div>
+                                <strong>Saturday, January 31, 2026</strong>
+                                <span>2 Rajab 1447 H</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+                            <div>
+                                <strong>2:00 PM</strong>
+                                <span>After Jummah Prayer</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <div>
+                                <strong>Rose Lounge</strong>
+                                <span>Nooradi, Tirur Road, Malappuram</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="https://roselounge.com/" target="_blank" class="btn-event">
+                        <span>View Location</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Countdown Section -->
+        <section class="countdown-section" id="countdown">
+            <div class="countdown-bg"></div>
+            <div class="countdown-content">
+                <h2 data-aos="fade-up">Counting Down to Our Special Day</h2>
+                <p class="countdown-subtitle" data-aos="fade-up" data-aos-delay="100">Join us as we begin our journey together</p>
+
+                <div class="countdown-timer" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="time-unit">
+                        <div class="time-number-wrapper">
+                            <span class="time-number" id="days">00</span>
+                        </div>
+                        <span class="time-label">Days</span>
+                    </div>
+                    <div class="time-separator">:</div>
+                    <div class="time-unit">
+                        <div class="time-number-wrapper">
+                            <span class="time-number" id="hours">00</span>
+                        </div>
+                        <span class="time-label">Hours</span>
+                    </div>
+                    <div class="time-separator">:</div>
+                    <div class="time-unit">
+                        <div class="time-number-wrapper">
+                            <span class="time-number" id="minutes">00</span>
+                        </div>
+                        <span class="time-label">Minutes</span>
+                    </div>
+                    <div class="time-separator">:</div>
+                    <div class="time-unit">
+                        <div class="time-number-wrapper">
+                            <span class="time-number" id="seconds">00</span>
+                        </div>
+                        <span class="time-label">Seconds</span>
+                    </div>
+                </div>
+
+                <button class="btn-calendar" onclick="addToGoogleCalendar()" data-aos="fade-up" data-aos-delay="400">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                    <span>Add to Calendar</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Messages from the Couple Section -->
+        <section class="messages-section" id="messages">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">From Our Hearts</span>
+                <h2>A Note to Our Guests</h2>
+                <div class="header-line"></div>
+            </div>
+
+            <div class="messages-container">
+                <div class="message-card groom-message" data-aos="fade-right" data-aos-delay="100">
+                    <div class="message-avatar">
+                        <span>J</span>
+                    </div>
+                    <div class="message-content">
+                        <h3>From the Groom</h3>
+                        <p>"As I embark on this beautiful journey, I am filled with gratitude for your presence in our lives. Your love and support have been a blessing, and I am honored to have you witness this sacred moment. May Allah bless us all."</p>
+                        <span class="message-signature">— Jaseem</span>
+                    </div>
+                </div>
+
+                <div class="message-divider" data-aos="zoom-in" data-aos-delay="200">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                </div>
+
+                <div class="message-card bride-message" data-aos="fade-left" data-aos-delay="300">
+                    <div class="message-avatar">
+                        <span>H</span>
+                    </div>
+                    <div class="message-content">
+                        <h3>From the Bride</h3>
+                        <p>"Your presence on our special day means the world to me. Thank you for being part of our journey and for showering us with your duas and blessings. I am truly grateful to have such wonderful people in my life."</p>
+                        <span class="message-signature">— Haifa</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location Map Section -->
+        <section class="location-section" id="location">
+            <div class="section-header light" data-aos="fade-up">
+                <span class="section-subtitle">Find Us</span>
+                <h2>Venue Location</h2>
+                <div class="header-line"></div>
+            </div>
+
+            <div class="location-container">
+                <div class="location-info" data-aos="fade-up" data-aos-delay="100">
+                    <div class="venue-card">
+                        <div class="venue-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <h3>Rose Lounge</h3>
+                        <p class="venue-address">Nooradi, Tirur Road<br>Malappuram, Kerala 676504, India</p>
+                        <div class="venue-details">
+                            <div class="venue-detail">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+                                <span>2:00 PM - January 31, 2026</span>
+                            </div>
+                            <div class="venue-detail">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                <span>+91 9137800800</span>
+                            </div>
+                            <div class="venue-detail">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="15" height="13"/><polygon points="16,8 20,8 23,11 23,16 16,16 16,8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                                <span>Parking available at venue</span>
+                            </div>
+                        </div>
+                        <a href="https://roselounge.com/" target="_blank" class="btn-directions">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3,11 22,2 13,21 11,13 3,11"/></svg>
+                            <span>Visit Website</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="location-map" data-aos="fade-up" data-aos-delay="200">
+                    <div class="map-wrapper">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.0!2d76.0!3d10.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sRose+Lounge+Malappuram!5e0!3m2!1sen!2sin!4v1234567890"
+                            width="100%"
+                            height="400"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy">
+                        </iframe>
+                        <div class="map-overlay">
+                            <p>Click map to interact</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gifts/Blessings Section -->
+        <section class="gifts-section" id="gifts">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Blessings</span>
+                <h2>Wedding Gifts</h2>
+                <div class="header-line"></div>
+            </div>
+
+            <div class="gifts-container" data-aos="fade-up" data-aos-delay="100">
+                <div class="gifts-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="20,12 20,22 4,22 4,12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+                </div>
+                <h3>Your Presence is Our Greatest Gift</h3>
+                <p class="gifts-message">Your love, prayers, and presence at our wedding are the most precious gifts we could receive. We are truly blessed to have you celebrate this special day with us.</p>
+
+                <div class="gifts-note">
+                    <p>However, if you wish to honor us with a gift, we would be grateful for your kind gesture. Your duas for a blessed marriage are what we cherish most.</p>
+                </div>
+
+                <div class="gifts-dua">
+                    <p class="dua-arabic-small">رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ</p>
+                    <p class="dua-translation">"Our Lord, grant us from among our spouses and offspring comfort to our eyes"</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section" id="faq">
+            <div class="section-header light" data-aos="fade-up">
+                <span class="section-subtitle">Questions</span>
+                <h2>Frequently Asked</h2>
+                <div class="header-line"></div>
+            </div>
+
+            <div class="faq-container" id="faqContainer">
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span class="faq-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                        </span>
+                        <h3>What is the dress code?</h3>
+                        <span class="faq-toggle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6,9 12,15 18,9"/></svg>
+                        </span>
+                    </div>
+                    <div class="faq-answer-wrapper">
+                        <p class="faq-answer">We request traditional or formal attire. Men may wear a thobe or formal suit, and women are encouraged to wear elegant modest attire such as an abaya or formal dress in soft colors.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="150">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span class="faq-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                        </span>
+                        <h3>Is there parking available?</h3>
+                        <span class="faq-toggle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6,9 12,15 18,9"/></svg>
+                        </span>
+                    </div>
+                    <div class="faq-answer-wrapper">
+                        <p class="faq-answer">Yes, complimentary parking is available at the venue. There will be attendants to guide you to the designated parking areas.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span class="faq-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                        </span>
+                        <h3>Can I bring children?</h3>
+                        <span class="faq-toggle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6,9 12,15 18,9"/></svg>
+                        </span>
+                    </div>
+                    <div class="faq-answer-wrapper">
+                        <p class="faq-answer">Children are welcome to attend the ceremony. We kindly ask parents to supervise their little ones during the formal proceedings.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="250">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span class="faq-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                        </span>
+                        <h3>Will there be refreshments?</h3>
+                        <span class="faq-toggle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6,9 12,15 18,9"/></svg>
+                        </span>
+                    </div>
+                    <div class="faq-answer-wrapper">
+                        <p class="faq-answer">Yes, light refreshments and traditional sweets will be served after the Nikah ceremony. We look forward to sharing this joyful moment with you.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span class="faq-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                        </span>
+                        <h3>How can I contact the family?</h3>
+                        <span class="faq-toggle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6,9 12,15 18,9"/></svg>
+                        </span>
+                    </div>
+                    <div class="faq-answer-wrapper">
+                        <p class="faq-answer">For any questions, please reach out to the bride's family or contact Rose Lounge at +91 9137800800. You can also use the WhatsApp share button at the bottom of this page.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dua Section -->
+        <section class="dua-section" id="dua">
+            <div class="dua-container" data-aos="fade-up">
+                <div class="dua-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                </div>
+                <h2>A Blessed Prayer</h2>
+                <div class="dua-content">
+                    <p class="dua-arabic">بَارَكَ اللَّهُ لَكَ وَبَارَكَ عَلَيْكَ وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ</p>
+                    <p class="dua-english">"May Allah bless you both and shower His blessings upon you, and may He unite you in goodness."</p>
+                    <p class="dua-reference">— Prophet Muhammad (PBUH)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-names" data-aos="fade-up">
+                    <span class="footer-name">Jaseem</span>
+                    <span class="heart-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    </span>
+                    <span class="footer-name">Haifa</span>
+                </div>
+
+                <p class="footer-message" data-aos="fade-up" data-aos-delay="100">We can't wait to celebrate with you!</p>
+
+                <div class="share-section" data-aos="fade-up" data-aos-delay="200">
+                    <p>Share this invitation</p>
+                    <div class="share-buttons">
+                        <button class="share-btn whatsapp" id="shareWhatsapp">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            <span>WhatsApp</span>
+                        </button>
+                        <button class="share-btn copy" onclick="copyInvitationLink()">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                            <span>Copy Link</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="footer-divider"></div>
+
+                <p class="copyright">Made with love for our special day</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Music Toggle -->
+    <div class="music-toggle" id="musicToggle">
+        <div class="music-waves">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <span class="music-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+        </span>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" loop preload="auto">
+        <source src="music/hawa-banke.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
