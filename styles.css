@@ -403,18 +403,58 @@ body {
     align-items: center;
     justify-content: center;
     perspective: 2000px;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 /* 3D Envelope */
 .envelope-3d {
     position: relative;
-    width: min(400px, 85vw);
-    height: min(280px, 50vh);
+    width: min(600px, 92vw);
+    height: min(420px, 75vh);
     transform-style: preserve-3d;
     cursor: pointer;
     animation: envelopeEntrance 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-    margin-bottom: 30px;
-    filter: drop-shadow(0 15px 40px rgba(107, 45, 92, 0.3));
+    filter: drop-shadow(0 20px 50px rgba(107, 45, 92, 0.35));
+}
+
+/* Responsive envelope sizes */
+@media (max-width: 480px) {
+    .envelope-3d {
+        width: 95vw;
+        height: 70vh;
+        max-height: 500px;
+    }
+
+    .envelope-container {
+        padding: 10px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .envelope-3d {
+        width: 90vw;
+        height: 65vh;
+        max-height: 480px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .envelope-3d {
+        width: 75vw;
+        height: 70vh;
+        max-width: 650px;
+        max-height: 480px;
+    }
+}
+
+@media (min-width: 1025px) {
+    .envelope-3d {
+        width: 600px;
+        height: 420px;
+    }
 }
 
 @keyframes envelopeEntrance {
@@ -503,7 +543,7 @@ body {
 
 .card-inner {
     position: relative;
-    padding: 30px 25px;
+    padding: clamp(20px, 4vw, 40px) clamp(15px, 3vw, 30px);
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -511,6 +551,7 @@ body {
     align-items: center;
     text-align: center;
     z-index: 1;
+    gap: clamp(5px, 1.5vw, 12px);
 }
 
 .card-header-ornament,
@@ -784,8 +825,8 @@ body {
 
 .seal-body {
     position: relative;
-    width: 80px;
-    height: 80px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
     background:
         radial-gradient(ellipse 40% 30% at 30% 25%, rgba(255, 100, 100, 0.4) 0%, transparent 50%),
@@ -796,6 +837,30 @@ body {
         inset 0 3px 8px rgba(255, 150, 150, 0.3),
         inset 0 -3px 8px rgba(50, 0, 0, 0.4);
     animation: sealPulse 3s ease infinite;
+}
+
+/* Responsive seal size */
+@media (max-width: 480px) {
+    .seal-body {
+        width: 70px;
+        height: 70px;
+    }
+
+    .seal-initials {
+        font-size: 0.9rem !important;
+    }
+
+    .seal-shadow {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .seal-body {
+        width: 80px;
+        height: 80px;
+    }
 }
 
 @keyframes sealPulse {
