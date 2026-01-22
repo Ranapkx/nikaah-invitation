@@ -1,0 +1,119 @@
+/* ========================================
+   Nikah Wedding Invitation - Global Styles
+   ======================================== */
+
+/* CSS Variables */
+:root {
+    /* Pastel Colors - Soft & Dreamy */
+    --pastel-pink: #FFE4EC;
+    --pastel-pink-dark: #FFD1DC;
+    --pastel-lavender: #E8E0F0;
+    --pastel-lavender-dark: #D8CCE8;
+    --pastel-mint: #E0F5E8;
+    --pastel-mint-dark: #C8EBD8;
+    --pastel-peach: #FFE8D8;
+    --pastel-peach-dark: #FFD8C0;
+    --pastel-blue: #E0F0FF;
+    --pastel-cream: #FFF8F0;
+
+    /* Vibrant Text Colors - Solid & Rich */
+    --text-primary: #6B2D5C;
+    --text-secondary: #2D5C6B;
+    --text-accent: #8B4D7C;
+    --text-highlight: #D4546A;
+    --text-dark: #3D2D4D;
+    --text-gold: #B8860B;
+
+    /* Supporting Colors */
+    --white: #FFFFFF;
+    --off-white: #FFFBF8;
+    --cream: #FFF5EB;
+    --gray-light: #F0E8E0;
+    --gray: #8A8090;
+    --gray-dark: #5A5060;
+
+    /* Accent Gradient Colors */
+    --gradient-start: #FFE4EC;
+    --gradient-end: #E8E0F0;
+    --gold: #D4AF37;
+    --gold-light: #E8C860;
+
+    /* Vibrant Sage */
+    --sage: #6B9080;
+    --sage-light: #A0C4B0;
+    --dusty-rose: #C9969B;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 10px rgba(107, 45, 92, 0.06);
+    --shadow-md: 0 6px 25px rgba(107, 45, 92, 0.08);
+    --shadow-lg: 0 15px 50px rgba(107, 45, 92, 0.1);
+    --shadow-glow: 0 0 30px rgba(212, 84, 106, 0.2);
+
+    /* Transitions */
+    --transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Reset */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    background: linear-gradient(135deg, var(--pastel-cream) 0%, var(--pastel-pink) 50%, var(--pastel-lavender) 100%);
+    background-attachment: fixed;
+    color: var(--text-dark);
+    line-height: 1.7;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Global Animation Keyframes */
+@keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+}
+
+@keyframes floatSoft {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+@keyframes heartPulse {
+    0%, 100% { transform: scale(1); }
+    10% { transform: scale(1.15); }
+    20% { transform: scale(1); }
+    30% { transform: scale(1.1); }
+    40% { transform: scale(1); }
+}
+
+@keyframes borderGlow {
+    0%, 100% { border-color: rgba(212, 84, 106, 0.3); }
+    50% { border-color: rgba(212, 84, 106, 0.6); }
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    25% { transform: scale(1.15); }
+    50% { transform: scale(1.05); }
+    75% { transform: scale(1.2); }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}

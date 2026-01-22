@@ -1,0 +1,77 @@
+/* Music Toggle Button */
+.musicToggle {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--white) 0%, var(--pastel-pink) 100%);
+    border: 2px solid rgba(212, 84, 106, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 30px rgba(107, 45, 92, 0.15);
+    animation: floatSoft 4s ease-in-out infinite;
+}
+
+.musicToggle:hover {
+    background: linear-gradient(135deg, var(--text-highlight), var(--text-accent));
+    border-color: var(--text-highlight);
+    box-shadow: 0 12px 40px rgba(212, 84, 106, 0.3);
+}
+
+.musicToggle:hover svg {
+    color: var(--white);
+    stroke: var(--white);
+}
+
+.musicToggle svg {
+    width: 26px;
+    height: 26px;
+    color: var(--text-highlight);
+    stroke: var(--text-highlight);
+    transition: all 0.4s ease;
+}
+
+.musicToggle.playing svg {
+    opacity: 0;
+}
+
+.musicWaves {
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    height: 22px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.musicToggle.playing .musicWaves {
+    opacity: 1;
+}
+
+.wave {
+    width: 4px;
+    background: linear-gradient(180deg, var(--text-highlight), var(--text-accent));
+    border-radius: 2px;
+    animation: wave 0.5s ease-in-out infinite alternate;
+}
+
+.wave:nth-child(1) { height: 8px; animation-delay: 0s; }
+.wave:nth-child(2) { height: 14px; animation-delay: 0.1s; }
+.wave:nth-child(3) { height: 10px; animation-delay: 0.2s; }
+
+@keyframes wave {
+    from { height: 6px; }
+    to { height: 18px; }
+}
+
+@keyframes floatSoft {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}

@@ -1,0 +1,492 @@
+/* Envelope Styles */
+.envelopeWrapper {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.envelopeWrapper.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Background */
+.envelopeBg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.bgGradient {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 80% 50% at 50% 50%, var(--pastel-pink) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 80% at 20% 80%, var(--pastel-lavender) 0%, transparent 50%),
+        radial-gradient(ellipse 60% 80% at 80% 20%, var(--pastel-peach) 0%, transparent 50%),
+        linear-gradient(135deg, var(--pastel-cream) 0%, var(--pastel-pink) 50%, var(--pastel-lavender) 100%);
+}
+
+.bgPattern {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L35 20 L50 20 L38 30 L42 45 L30 35 L18 45 L22 30 L10 20 L25 20 Z' fill='none' stroke='%23D4AF37' stroke-width='0.5' opacity='0.1'/%3E%3C/svg%3E");
+    background-size: 100px 100px;
+    opacity: 0.5;
+}
+
+/* Floating Petals */
+.floatingPetals {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.petal {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(ellipse at center, var(--pastel-pink-dark) 0%, transparent 70%);
+    border-radius: 50% 0 50% 50%;
+    opacity: 0;
+    animation: floatPetal 15s ease-in-out infinite;
+}
+
+@keyframes floatPetal {
+    0% {
+        top: -10%;
+        opacity: 0;
+        transform: rotate(0deg) translateX(0);
+    }
+    10% { opacity: 0.6; }
+    90% { opacity: 0.6; }
+    100% {
+        top: 110%;
+        opacity: 0;
+        transform: rotate(360deg) translateX(100px);
+    }
+}
+
+/* Gold Corners */
+.goldCorner {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    z-index: 10;
+    opacity: 0.7;
+}
+
+.topLeft { top: 20px; left: 20px; }
+.topRight { top: 20px; right: 20px; transform: scaleX(-1); }
+.bottomLeft { bottom: 20px; left: 20px; transform: scaleY(-1); }
+.bottomRight { bottom: 20px; right: 20px; transform: scale(-1); }
+
+/* Envelope Container */
+.envelopeContainer {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    perspective: 2000px;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* 3D Envelope */
+.envelope3d {
+    position: relative;
+    width: min(600px, 92vw);
+    height: min(420px, 75vh);
+    transform-style: preserve-3d;
+    cursor: pointer;
+    filter: drop-shadow(0 20px 50px rgba(107, 45, 92, 0.35));
+}
+
+@media (max-width: 480px) {
+    .envelope3d {
+        width: 95vw;
+        height: 70vh;
+        max-height: 500px;
+    }
+
+    .envelopeContainer {
+        padding: 10px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .envelope3d {
+        width: 90vw;
+        height: 65vh;
+        max-height: 480px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .envelope3d {
+        width: 75vw;
+        height: 70vh;
+        max-width: 650px;
+        max-height: 480px;
+    }
+}
+
+@media (min-width: 1025px) {
+    .envelope3d {
+        width: 600px;
+        height: 420px;
+    }
+}
+
+/* Envelope Back */
+.envelopeBack {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, #F5EDE3 0%, #EDE4D8 50%, #E0D7CB 100%);
+    border-radius: 12px;
+    border: 2px solid rgba(180, 160, 130, 0.5);
+    box-shadow:
+        0 25px 60px rgba(107, 45, 92, 0.35),
+        0 10px 30px rgba(0, 0, 0, 0.2),
+        0 4px 15px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    z-index: 0;
+}
+
+/* Invitation Card */
+.invitationCard {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    background: linear-gradient(180deg, #FFFEF9 0%, #FBF8F1 50%, #F8F4EB 100%);
+    border-radius: 8px;
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.1),
+        inset 0 0 0 1px rgba(212, 175, 55, 0.2);
+    z-index: 1;
+    overflow: hidden;
+}
+
+.cardGoldBorder {
+    position: absolute;
+    inset: 12px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 4px;
+    pointer-events: none;
+}
+
+.cardGoldBorder::before {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 2px;
+}
+
+.cardInner {
+    position: relative;
+    padding: clamp(20px, 4vw, 40px) clamp(15px, 3vw, 30px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+    gap: clamp(5px, 1.5vw, 12px);
+}
+
+.cardBismillah {
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.cardInvitationText {
+    font-size: clamp(0.55rem, 1.8vw, 0.7rem);
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.cardNamesSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 5px;
+}
+
+.cardName {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    background: linear-gradient(135deg, var(--text-highlight) 0%, var(--text-primary) 50%, var(--text-accent) 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 4s ease infinite;
+}
+
+.cardAmpersand {
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    color: var(--text-highlight);
+    animation: heartPulse 2s ease infinite;
+}
+
+.cardArabicNames {
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    color: var(--text-secondary);
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.cardDivider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+    color: var(--text-highlight);
+}
+
+.cardDivider span {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.cardDateSection {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.cardDay {
+    font-size: clamp(0.6rem, 1.5vw, 0.75rem);
+    color: var(--text-accent);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 600;
+}
+
+.cardFullDate {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.cardHijri {
+    font-size: clamp(0.55rem, 1.3vw, 0.7rem);
+    color: var(--text-secondary);
+    letter-spacing: 2px;
+}
+
+/* Envelope Front */
+.envelopeFront {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 55%;
+    background: linear-gradient(0deg, #D8CFBF 0%, #E5DCD0 30%, #EDE4D8 100%);
+    border-radius: 0 0 12px 12px;
+    border: 2px solid rgba(180, 160, 130, 0.5);
+    border-top: none;
+    z-index: 2;
+    box-shadow:
+        inset 0 10px 30px rgba(255, 255, 255, 0.4),
+        inset 0 -5px 20px rgba(0, 0, 0, 0.05),
+        0 -3px 15px rgba(0, 0, 0, 0.1),
+        0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.envelopeFront::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(0,0,0,0.08), transparent);
+}
+
+/* Envelope Flap */
+.envelopeFlap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    transform-origin: top center;
+    transform-style: preserve-3d;
+    z-index: 3;
+}
+
+.flapInner {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, #DCD3C6 0%, #D0C7BA 50%, #C8BFAE 100%);
+    clip-path: polygon(0 0, 50% 100%, 100% 0);
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.2),
+        inset 0 -10px 30px rgba(0, 0, 0, 0.08);
+    border: 2px solid rgba(180, 160, 130, 0.4);
+}
+
+/* Wax Seal */
+.waxSeal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.waxSeal:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.sealShadow {
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 90px;
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(8px);
+}
+
+.sealBody {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background:
+        radial-gradient(ellipse 40% 30% at 30% 25%, rgba(255, 100, 100, 0.4) 0%, transparent 50%),
+        radial-gradient(ellipse 50% 40% at 70% 70%, rgba(50, 0, 0, 0.4) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, #A00000 0%, #8B0000 30%, #700000 60%, #500000 100%);
+    box-shadow:
+        0 4px 15px rgba(139, 0, 0, 0.5),
+        inset 0 3px 8px rgba(255, 150, 150, 0.3),
+        inset 0 -3px 8px rgba(50, 0, 0, 0.4);
+    animation: sealPulse 3s ease infinite;
+}
+
+@media (max-width: 480px) {
+    .sealBody {
+        width: 70px;
+        height: 70px;
+    }
+
+    .sealInitials {
+        font-size: 0.9rem !important;
+    }
+
+    .sealShadow {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .sealBody {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@keyframes sealPulse {
+    0%, 100% { box-shadow: 0 4px 15px rgba(139, 0, 0, 0.5), inset 0 3px 8px rgba(255, 150, 150, 0.3), inset 0 -3px 8px rgba(50, 0, 0, 0.4); }
+    50% { box-shadow: 0 4px 25px rgba(139, 0, 0, 0.7), inset 0 3px 8px rgba(255, 150, 150, 0.4), inset 0 -3px 8px rgba(50, 0, 0, 0.4); }
+}
+
+.sealShine {
+    position: absolute;
+    top: 8px;
+    left: 15px;
+    width: 25px;
+    height: 15px;
+    background: linear-gradient(180deg, rgba(255, 200, 200, 0.5) 0%, transparent 100%);
+    border-radius: 50%;
+    transform: rotate(-30deg);
+}
+
+.sealEdge {
+    position: absolute;
+    inset: 5px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 150, 150, 0.2);
+}
+
+.sealEmboss {
+    position: absolute;
+    inset: 12px;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 50% 50%, rgba(255, 200, 200, 0.15) 0%, transparent 50%),
+        linear-gradient(135deg, rgba(255, 150, 150, 0.1) 0%, transparent 50%, rgba(50, 0, 0, 0.2) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 2px 4px rgba(50, 0, 0, 0.3);
+}
+
+.sealInitials {
+    font-size: 0.9rem;
+    color: rgba(255, 200, 200, 0.8);
+    text-shadow:
+        0 1px 2px rgba(50, 0, 0, 0.5),
+        0 -1px 1px rgba(255, 200, 200, 0.3);
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+/* Seal Pieces */
+.sealPieces {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 6;
+    pointer-events: none;
+}
+
+.piece {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, #8B0000 0%, #500000 100%);
+    border-radius: 30% 70% 50% 50%;
+}
+
+/* Particles */
+.particles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--gold) 0%, transparent 70%);
+}

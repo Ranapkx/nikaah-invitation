@@ -1,0 +1,158 @@
+/* Messages Section */
+.messagesSection {
+    padding: 100px 20px;
+    background: linear-gradient(180deg, var(--pastel-cream) 0%, var(--pastel-pink) 50%, var(--pastel-lavender) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.sectionHeader {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.sectionHeader.light h2 {
+    color: var(--text-primary);
+}
+
+.sectionSubtitle {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--text-accent);
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.sectionHeader h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--text-primary);
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.headerLine {
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--text-highlight), var(--text-accent), transparent);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.messagesContainer {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+
+.messageCard {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+    max-width: 700px;
+    padding: 35px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(255,248,240,0.95) 100%);
+    border-radius: 25px;
+    box-shadow: 0 15px 50px rgba(107, 45, 92, 0.12);
+    border: 2px solid rgba(212, 84, 106, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.messageCard:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 30px 80px rgba(107, 45, 92, 0.22);
+}
+
+.groomMessage {
+    align-self: flex-start;
+}
+
+.brideMessage {
+    align-self: flex-end;
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+.messageAvatar {
+    width: 70px;
+    height: 70px;
+    min-width: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--pastel-lavender) 0%, var(--pastel-pink-dark) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid var(--white);
+    box-shadow: 0 8px 25px rgba(212, 84, 106, 0.2);
+    animation: floatSoft 5s ease-in-out infinite;
+}
+
+@keyframes floatSoft {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+.messageAvatar span {
+    font-size: 2rem;
+    color: var(--text-primary);
+}
+
+.messageContent h3 {
+    font-size: 1.3rem;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.messageContent p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.messageSignature {
+    font-size: 1.3rem;
+    color: var(--text-highlight);
+}
+
+.messageDivider {
+    width: 50px;
+    height: 50px;
+    color: var(--text-highlight);
+    animation: heartPulse 2s ease-in-out infinite;
+    filter: drop-shadow(0 4px 15px rgba(212, 84, 106, 0.4));
+}
+
+.messageDivider svg {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes heartPulse {
+    0%, 100% { transform: scale(1); }
+    10% { transform: scale(1.15); }
+    20% { transform: scale(1); }
+    30% { transform: scale(1.1); }
+    40% { transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+    .messageCard {
+        flex-direction: column !important;
+        text-align: center !important;
+        padding: 30px 25px;
+    }
+
+    .brideMessage {
+        text-align: center !important;
+    }
+
+    .messageAvatar {
+        margin: 0 auto;
+    }
+}
