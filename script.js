@@ -16,36 +16,49 @@ document.addEventListener('DOMContentLoaded', function() {
 function initEnvelopeAnimation() {
     const envelopeWrapper = document.getElementById('envelopeWrapper');
     const envelope = document.getElementById('envelope');
-    const waxSeal = document.getElementById('waxSeal');
-    const openText = document.getElementById('openText');
     const invitationContent = document.getElementById('invitationContent');
 
     if (!envelope) return;
 
-    // Click on wax seal to open envelope
-    if (waxSeal) {
-        waxSeal.addEventListener('click', function(e) {
-            e.stopPropagation();
-            openEnvelope();
-        });
+    let isOpening = false;
 
-        // Mobile tap on seal
-        waxSeal.addEventListener('touchend', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            openEnvelope();
-        });
+    // Scroll/wheel to open envelope
+    function handleScroll(e) {
+        if (isOpening) return;
+        e.preventDefault();
+        openEnvelope();
     }
 
-    // Also allow click on entire envelope as fallback
+    // Listen for wheel event (desktop scroll)
+    envelopeWrapper.addEventListener('wheel', handleScroll, { passive: false });
+
+    // Listen for touch swipe (mobile)
+    let touchStartY = 0;
+    envelopeWrapper.addEventListener('touchstart', function(e) {
+        touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+
+    envelopeWrapper.addEventListener('touchmove', function(e) {
+        if (isOpening) return;
+        const touchEndY = e.touches[0].clientY;
+        const diff = touchStartY - touchEndY;
+
+        // If swiped up more than 30px, open envelope
+        if (diff > 30) {
+            e.preventDefault();
+            openEnvelope();
+        }
+    }, { passive: false });
+
+    // Also allow click/tap as fallback
     envelope.addEventListener('click', openEnvelope);
 
     function openEnvelope() {
-        if (envelope.classList.contains('open')) return;
+        if (envelope.classList.contains('open') || isOpening) return;
+        isOpening = true;
 
         // Add open class to envelope
         envelope.classList.add('open');
-        if (openText) openText.classList.add('hidden');
 
         // Create seal break sound effect (visual feedback)
         createSealBreakEffect();
