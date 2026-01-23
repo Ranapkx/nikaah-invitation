@@ -15,7 +15,14 @@
     z-index: 1000;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 8px 30px rgba(107, 45, 92, 0.15);
-    animation: floatSoft 4s ease-in-out infinite;
+}
+
+/* iOS safe area support */
+@supports (bottom: env(safe-area-inset-bottom)) {
+    .musicToggle {
+        bottom: calc(25px + env(safe-area-inset-bottom));
+        right: calc(25px + env(safe-area-inset-right));
+    }
 }
 
 .musicToggle:hover {
@@ -26,52 +33,182 @@
 
 .musicToggle:hover svg {
     color: var(--white);
-    stroke: var(--white);
+    fill: var(--white);
 }
 
 .musicToggle svg {
     width: 26px;
     height: 26px;
     color: var(--text-highlight);
-    stroke: var(--text-highlight);
+    fill: var(--text-highlight);
     transition: all 0.4s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.musicToggle.playing {
+    background: linear-gradient(135deg, var(--text-highlight), var(--text-accent));
+    border-color: var(--text-highlight);
 }
 
 .musicToggle.playing svg {
     opacity: 0;
 }
 
+/* Music Waves */
 .musicWaves {
     position: absolute;
     display: flex;
     align-items: flex-end;
-    gap: 3px;
-    height: 22px;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-}
-
-.musicToggle.playing .musicWaves {
-    opacity: 1;
+    justify-content: center;
+    gap: 4px;
+    height: 24px;
+    z-index: 2;
 }
 
 .wave {
     width: 4px;
-    background: linear-gradient(180deg, var(--text-highlight), var(--text-accent));
+    min-height: 6px;
+    background: linear-gradient(180deg, var(--white), rgba(255, 255, 255, 0.8));
     border-radius: 2px;
-    animation: wave 0.5s ease-in-out infinite alternate;
 }
 
-.wave:nth-child(1) { height: 8px; animation-delay: 0s; }
-.wave:nth-child(2) { height: 14px; animation-delay: 0.1s; }
-.wave:nth-child(3) { height: 10px; animation-delay: 0.2s; }
-
-@keyframes wave {
-    from { height: 6px; }
-    to { height: 18px; }
+/* Pulse Ring Effect */
+.pulseRing {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid var(--text-highlight);
+    pointer-events: none;
 }
 
-@keyframes floatSoft {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-5px); }
+/* Floating Music Notes */
+.musicNotes {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.musicNote {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 1.2rem;
+    color: var(--text-highlight);
+    text-shadow: 0 2px 10px rgba(212, 84, 106, 0.5);
+}
+
+.musicNote:nth-child(1) {
+    color: var(--text-highlight);
+}
+
+.musicNote:nth-child(2) {
+    color: var(--text-accent);
+}
+
+.musicNote:nth-child(3) {
+    color: var(--gold);
+}
+
+/* Responsive - Tablets */
+@media (max-width: 768px) {
+    .musicToggle {
+        width: 55px;
+        height: 55px;
+        bottom: calc(22px + env(safe-area-inset-bottom, 0px));
+        right: calc(22px + env(safe-area-inset-right, 0px));
+    }
+
+    .musicToggle svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 480px) {
+    .musicToggle {
+        width: 48px;
+        height: 48px;
+        bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+        right: calc(18px + env(safe-area-inset-right, 0px));
+        box-shadow: 0 6px 25px rgba(107, 45, 92, 0.2);
+    }
+
+    .musicToggle svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .musicWaves {
+        height: 18px;
+        gap: 3px;
+    }
+
+    .wave {
+        width: 3px;
+        min-height: 5px;
+    }
+
+    .musicNote {
+        font-size: 1rem;
+    }
+
+    .pulseRing {
+        border-width: 1.5px;
+    }
+}
+
+/* Very small devices */
+@media (max-width: 360px) {
+    .musicToggle {
+        width: 44px;
+        height: 44px;
+        bottom: calc(15px + env(safe-area-inset-bottom, 0px));
+        right: calc(15px + env(safe-area-inset-right, 0px));
+    }
+
+    .musicToggle svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .musicWaves {
+        height: 16px;
+        gap: 2px;
+    }
+
+    .wave {
+        width: 2.5px;
+        min-height: 4px;
+    }
+
+    .musicNote {
+        font-size: 0.9rem;
+    }
+}
+
+/* Landscape orientation */
+@media (max-height: 500px) and (orientation: landscape) {
+    .musicToggle {
+        width: 42px;
+        height: 42px;
+        bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+        right: calc(12px + env(safe-area-inset-right, 0px));
+    }
+
+    .musicToggle svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .musicWaves {
+        height: 14px;
+    }
+
+    .wave {
+        width: 2px;
+    }
 }

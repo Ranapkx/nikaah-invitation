@@ -84,4 +84,205 @@
     font-size: 0.85rem;
     color: var(--text-accent);
     font-weight: 600;
+    display: block;
+}
+
+.divider {
+    width: 120px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--text-highlight), transparent);
+    margin: 35px auto;
+    border-radius: 2px;
+}
+
+/* Extra small devices (phones) */
+@media (max-width: 480px) {
+    .duaSection {
+        padding: 70px 18px;
+    }
+
+    .duaContent {
+        padding: 35px 22px;
+        border-radius: 22px;
+    }
+
+    .duaIcon {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 22px;
+    }
+
+    .duaTitle {
+        font-size: 1.4rem;
+        margin-bottom: 22px;
+    }
+
+    .duaText {
+        font-size: 1rem;
+        line-height: 1.8;
+        margin-bottom: 22px;
+    }
+
+    .duaArabic {
+        font-size: 1.15rem;
+        line-height: 2.1;
+        margin-bottom: 18px;
+        padding: 15px 10px;
+        background: rgba(212, 84, 106, 0.05);
+        border-radius: 12px;
+    }
+
+    .duaTranslation {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        margin-bottom: 14px;
+    }
+
+    .duaReference {
+        font-size: 0.78rem;
+    }
+
+    .divider {
+        width: 90px;
+        margin: 28px auto;
+    }
+}
+
+/* Small devices (landscape phones, small tablets) */
+@media (min-width: 481px) and (max-width: 767px) {
+    .duaSection {
+        padding: 70px 20px;
+    }
+
+    .duaContent {
+        padding: 40px 30px;
+    }
+
+    .duaTitle {
+        font-size: 1.4rem;
+    }
+
+    .duaArabic {
+        font-size: 1.1rem;
+    }
+}
+
+/* Medium devices (tablets) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .duaSection {
+        padding: 90px 40px;
+    }
+
+    .duaContent {
+        padding: 48px 42px;
+    }
+
+    .duaTitle {
+        font-size: 1.5rem;
+    }
+
+    .duaText {
+        font-size: 1.05rem;
+    }
+
+    .duaArabic {
+        font-size: 1.4rem;
+    }
+
+    .duaTranslation {
+        font-size: 1.05rem;
+    }
+}
+
+/* Large devices (desktops) */
+@media (min-width: 1024px) {
+    .duaSection {
+        padding: 120px 60px;
+    }
+
+    .duaContent {
+        max-width: 800px;
+        padding: 60px 55px;
+        border-radius: 30px;
+    }
+
+    .duaIcon {
+        width: 55px;
+        height: 55px;
+        margin-bottom: 30px;
+    }
+
+    .duaTitle {
+        font-size: 1.8rem;
+        margin-bottom: 35px;
+    }
+
+    .duaText {
+        font-size: 1.15rem;
+        line-height: 2;
+        margin-bottom: 30px;
+    }
+
+    .duaArabic {
+        font-size: 1.7rem;
+        line-height: 2.3;
+        margin-bottom: 25px;
+    }
+
+    .duaTranslation {
+        font-size: 1.15rem;
+        line-height: 1.9;
+        margin-bottom: 18px;
+    }
+
+    .duaReference {
+        font-size: 0.95rem;
+    }
+
+    .divider {
+        width: 140px;
+        margin: 40px auto;
+    }
+}
+
+/* Landscape orientation on mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .duaSection {
+        padding: 40px 20px;
+    }
+
+    .duaContent {
+        padding: 25px 20px;
+    }
+
+    .duaIcon {
+        width: 30px;
+        height: 30px;
+        margin-bottom: 15px;
+    }
+
+    .duaTitle {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+
+    .duaText {
+        font-size: 0.85rem;
+        margin-bottom: 15px;
+    }
+
+    .duaArabic {
+        font-size: 0.9rem;
+        line-height: 1.8;
+        margin-bottom: 10px;
+    }
+
+    .duaTranslation {
+        font-size: 0.85rem;
+        margin-bottom: 8px;
+    }
+
+    .divider {
+        margin: 20px auto;
+    }
 }

@@ -1,0 +1,49 @@
+/* Scroll To Top Button */
+.scrollToTop {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--white) 0%, var(--pastel-lavender) 100%);
+    border: 2px solid rgba(212, 84, 106, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 8px 30px rgba(107, 45, 92, 0.15);
+    transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.scrollToTop:hover {
+    background: linear-gradient(135deg, var(--text-highlight), var(--text-accent));
+    border-color: var(--text-highlight);
+}
+
+.scrollToTop:hover svg {
+    stroke: var(--white);
+}
+
+.scrollToTop svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--text-highlight);
+    transition: stroke 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .scrollToTop {
+        width: 45px;
+        height: 45px;
+        bottom: 20px;
+        left: 20px;
+    }
+
+    .scrollToTop svg {
+        width: 20px;
+        height: 20px;
+    }
+}

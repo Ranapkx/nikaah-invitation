@@ -139,6 +139,7 @@
     border-radius: 30px;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 8px 25px rgba(212, 84, 106, 0.3);
+    margin: 0 auto;
 }
 
 .btnDirections:hover {
@@ -178,22 +179,501 @@
     display: block;
 }
 
-@media (max-width: 992px) {
+/* Extra small devices (phones) */
+@media (max-width: 480px) {
+    .locationSection {
+        padding: 60px 16px;
+    }
+
+    .sectionHeader {
+        margin-bottom: 30px;
+    }
+
+    .sectionSubtitle {
+        font-size: 0.65rem;
+        letter-spacing: 3px;
+        margin-bottom: 8px;
+    }
+
+    .sectionHeader h2 {
+        font-size: 1.6rem;
+        margin-bottom: 12px;
+    }
+
+    .headerLine {
+        width: 70px;
+        height: 2px;
+    }
+
     .locationContainer {
         grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0;
+    }
+
+    .locationInfo {
+        width: 100%;
+    }
+
+    .venueCard {
+        padding: 28px 20px;
+        border-radius: 20px;
+        width: 100%;
+        box-shadow: 0 10px 40px rgba(107, 45, 92, 0.1);
+    }
+
+    .venueIcon {
+        width: 55px;
+        height: 55px;
+        padding: 14px;
+        margin-bottom: 15px;
+    }
+
+    .venueCard h3 {
+        font-size: 1.4rem;
+        margin-bottom: 8px;
+    }
+
+    .venueAddress {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+        line-height: 1.7;
+    }
+
+    .venueDetails {
+        margin-bottom: 20px;
+    }
+
+    .venueDetail {
+        gap: 8px;
+        margin-bottom: 10px;
+        flex-wrap: nowrap;
+    }
+
+    .venueDetail svg {
+        width: 18px;
+        height: 18px;
+        min-width: 18px;
+    }
+
+    .venueDetail span {
+        font-size: 0.82rem;
+        white-space: nowrap;
+    }
+
+    .btnDirections {
+        padding: 14px 28px;
+        font-size: 0.78rem;
+        border-radius: 25px;
+        width: 100%;
+        max-width: 220px;
+    }
+
+    .btnDirections svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .locationMap {
+        border-radius: 18px;
+        border-width: 2px;
+    }
+
+    .mapWrapper {
+        min-height: 250px;
+    }
+
+    .mapWrapper iframe {
+        min-height: 250px;
+    }
+}
+
+/* Small devices (landscape phones, small tablets) */
+@media (min-width: 481px) and (max-width: 767px) {
+    .locationSection {
+        padding: 70px 24px;
+    }
+
+    .sectionHeader {
+        margin-bottom: 40px;
+    }
+
+    .sectionSubtitle {
+        font-size: 0.7rem;
+        letter-spacing: 3.5px;
+    }
+
+    .sectionHeader h2 {
+        font-size: 1.9rem;
+    }
+
+    .locationContainer {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .locationInfo {
+        width: 100%;
+    }
+
+    .venueCard {
+        padding: 32px 28px;
+        border-radius: 22px;
+        width: 100%;
+    }
+
+    .venueIcon {
+        width: 65px;
+        height: 65px;
+        padding: 16px;
+    }
+
+    .venueCard h3 {
+        font-size: 1.6rem;
+    }
+
+    .venueAddress {
+        font-size: 0.95rem;
+    }
+
+    .venueDetail span {
+        font-size: 0.88rem;
+    }
+
+    .btnDirections {
+        padding: 15px 32px;
+        font-size: 0.82rem;
+        max-width: 240px;
+    }
+
+    .locationMap {
+        border-radius: 20px;
+    }
+
+    .mapWrapper {
+        min-height: 300px;
+    }
+
+    .mapWrapper iframe {
+        min-height: 300px;
+    }
+}
+
+/* Medium devices (tablets) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .locationSection {
+        padding: 80px 30px;
+    }
+
+    .sectionHeader {
+        margin-bottom: 50px;
+    }
+
+    .sectionSubtitle {
+        font-size: 0.72rem;
+        letter-spacing: 4px;
+    }
+
+    .sectionHeader h2 {
+        font-size: 2.2rem;
+    }
+
+    .locationContainer {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .locationInfo {
+        width: 100%;
+    }
+
+    .venueCard {
+        padding: 35px 32px;
+        border-radius: 24px;
+        width: 100%;
+    }
+
+    .venueIcon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .venueCard h3 {
+        font-size: 1.75rem;
+    }
+
+    .venueAddress {
+        font-size: 1rem;
+    }
+
+    .venueDetail span {
+        font-size: 0.92rem;
+    }
+
+    .btnDirections {
+        padding: 16px 35px;
+        font-size: 0.88rem;
+    }
+
+    .locationMap {
+        border-radius: 24px;
     }
 
     .mapWrapper {
         min-height: 350px;
     }
+
+    .mapWrapper iframe {
+        min-height: 350px;
+    }
 }
 
-@media (max-width: 768px) {
+/* Large devices (desktops) */
+@media (min-width: 1024px) {
+    .locationSection {
+        padding: 120px 60px;
+    }
+
+    .sectionHeader {
+        margin-bottom: 70px;
+    }
+
+    .sectionSubtitle {
+        font-size: 0.8rem;
+        letter-spacing: 5px;
+    }
+
+    .sectionHeader h2 {
+        font-size: 2.8rem;
+    }
+
+    .headerLine {
+        width: 120px;
+        height: 4px;
+    }
+
+    .locationContainer {
+        grid-template-columns: 1fr 1.5fr;
+        gap: 50px;
+        max-width: 1200px;
+    }
+
     .venueCard {
-        padding: 30px 25px;
+        padding: 45px 40px;
+        border-radius: 30px;
+    }
+
+    .venueIcon {
+        width: 80px;
+        height: 80px;
+        padding: 20px;
+        margin-bottom: 25px;
+    }
+
+    .venueCard h3 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .venueAddress {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+    }
+
+    .venueDetails {
+        margin-bottom: 30px;
+    }
+
+    .venueDetail {
+        gap: 12px;
+        margin-bottom: 15px;
+    }
+
+    .venueDetail svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .venueDetail span {
+        font-size: 1rem;
+    }
+
+    .btnDirections {
+        padding: 18px 40px;
+        font-size: 0.95rem;
+        border-radius: 35px;
+    }
+
+    .btnDirections svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .locationMap {
+        border-radius: 30px;
     }
 
     .mapWrapper {
-        min-height: 300px;
+        min-height: 450px;
+    }
+
+    .mapWrapper iframe {
+        min-height: 450px;
+    }
+}
+
+/* Landscape orientation on mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .locationSection {
+        padding: 40px 20px;
+    }
+
+    .sectionHeader {
+        margin-bottom: 20px;
+    }
+
+    .sectionSubtitle {
+        font-size: 0.55rem;
+        margin-bottom: 6px;
+    }
+
+    .sectionHeader h2 {
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+    }
+
+    .headerLine {
+        width: 60px;
+    }
+
+    .locationContainer {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        align-items: start;
+    }
+
+    .venueCard {
+        padding: 18px 14px;
+        border-radius: 16px;
+    }
+
+    .venueIcon {
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .venueCard h3 {
+        font-size: 1.1rem;
+        margin-bottom: 6px;
+    }
+
+    .venueAddress {
+        font-size: 0.75rem;
+        margin-bottom: 12px;
+        line-height: 1.5;
+    }
+
+    .venueDetails {
+        margin-bottom: 12px;
+    }
+
+    .venueDetail {
+        margin-bottom: 8px;
+        gap: 6px;
+    }
+
+    .venueDetail svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .venueDetail span {
+        font-size: 0.7rem;
+    }
+
+    .btnDirections {
+        padding: 10px 18px;
+        font-size: 0.7rem;
+        border-radius: 20px;
+    }
+
+    .btnDirections svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .locationMap {
+        border-radius: 16px;
+    }
+
+    .mapWrapper {
+        min-height: 180px;
+    }
+
+    .mapWrapper iframe {
+        min-height: 180px;
+    }
+}
+
+/* Very small devices (320px width) */
+@media (max-width: 360px) {
+    .locationSection {
+        padding: 50px 12px;
+    }
+
+    .sectionSubtitle {
+        font-size: 0.6rem;
+        letter-spacing: 2.5px;
+    }
+
+    .sectionHeader h2 {
+        font-size: 1.4rem;
+    }
+
+    .locationContainer {
+        gap: 18px;
+    }
+
+    .venueCard {
+        padding: 24px 16px;
+        border-radius: 18px;
+    }
+
+    .venueIcon {
+        width: 50px;
+        height: 50px;
+        padding: 12px;
+    }
+
+    .venueCard h3 {
+        font-size: 1.25rem;
+    }
+
+    .venueAddress {
+        font-size: 0.85rem;
+    }
+
+    .venueDetail span {
+        font-size: 0.78rem;
+    }
+
+    .btnDirections {
+        padding: 12px 24px;
+        font-size: 0.75rem;
+        max-width: 200px;
+    }
+
+    .mapWrapper {
+        min-height: 220px;
+    }
+
+    .mapWrapper iframe {
+        min-height: 220px;
     }
 }

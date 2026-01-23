@@ -8,8 +8,7 @@
     background: linear-gradient(135deg, var(--pastel-cream) 0%, var(--pastel-mint) 30%, var(--pastel-lavender) 70%, var(--pastel-pink) 100%);
     background-size: 400% 400%;
     animation: gradientMove 15s ease infinite;
-    overflow-x: hidden;
-    overflow-y: visible;
+    overflow: visible;
 }
 
 @keyframes gradientMove {
@@ -53,6 +52,7 @@
     max-width: 100%;
     width: 100%;
     padding: 40px;
+    overflow: visible;
 }
 
 .heroTop {
@@ -60,6 +60,7 @@
 }
 
 .bismillah {
+    font-family: var(--font-arabic);
     font-size: clamp(1.6rem, 4vw, 2.4rem);
     color: var(--text-primary);
     margin-bottom: 8px;
@@ -75,6 +76,7 @@
 
 .heroCenter {
     margin-bottom: 50px;
+    overflow: visible;
 }
 
 .weddingLabel {
@@ -94,9 +96,11 @@
     flex-wrap: wrap;
     margin-bottom: 15px;
     padding: 0 30px;
+    overflow: visible;
 }
 
 .groomName, .brideName {
+    font-family: var(--font-script);
     font-size: clamp(3rem, 8vw, 5.5rem);
     background: linear-gradient(135deg, var(--text-highlight) 0%, var(--text-primary) 50%, var(--text-accent) 100%);
     background-size: 200% auto;
@@ -112,6 +116,11 @@
     cursor: pointer;
 }
 
+.groomName {
+    padding-left: 30px;
+    margin-left: -10px;
+}
+
 .groomName:hover, .brideName:hover {
     transform: scale(1.05) translateY(-5px);
     filter: drop-shadow(0 8px 20px rgba(212, 84, 106, 0.4));
@@ -124,6 +133,7 @@
 }
 
 .namesSeparator {
+    font-family: var(--font-script);
     font-size: clamp(2rem, 5vw, 3.5rem);
     color: var(--text-highlight);
     animation: heartPulse 2s ease-in-out infinite;
@@ -145,6 +155,7 @@
 }
 
 .arabicNames {
+    font-family: var(--font-arabic);
     font-size: clamp(1.2rem, 2.5vw, 1.6rem);
     color: var(--text-secondary);
     letter-spacing: 5px;
@@ -231,21 +242,369 @@
     font-weight: 500;
 }
 
+/* Extra small devices (phones) */
 @media (max-width: 480px) {
-    .coupleNamesWrapper {
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    .namesSeparator {
-        display: none;
-    }
-
-    .saveTheDate {
-        padding: 25px 35px;
+    .hero {
+        min-height: 100vh;
+        min-height: 100dvh;
+        padding: 20px 0;
     }
 
     .heroContent {
-        padding: 20px;
+        padding: 20px 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 100vh;
+        min-height: 100dvh;
+    }
+
+    .heroTop {
+        margin-bottom: 25px;
+    }
+
+    .bismillah {
+        font-size: 1.5rem;
+        line-height: 1.4;
+    }
+
+    .bismillahEnglish {
+        font-size: 0.75rem;
+        letter-spacing: 0.5px;
+    }
+
+    .heroCenter {
+        margin-bottom: 25px;
+    }
+
+    .weddingLabel {
+        font-size: 0.6rem;
+        letter-spacing: 3px;
+        margin-bottom: 12px;
+    }
+
+    .coupleNamesWrapper {
+        flex-direction: column;
+        gap: 0;
+        padding: 0 20px;
+        overflow: visible;
+    }
+
+    .groomName, .brideName {
+        font-size: 3.2rem;
+        padding: 5px 15px;
+        line-height: 1.1;
+    }
+
+    .groomName {
+        padding-left: 35px;
+        margin-left: -15px;
+    }
+
+    .namesSeparator {
+        display: block;
+        font-size: 1.8rem;
+        margin: 5px 0;
+    }
+
+    .arabicNames {
+        font-size: 1.1rem;
+        letter-spacing: 4px;
+        margin-top: 10px;
+    }
+
+    .heroBottom {
+        margin-bottom: 30px;
+    }
+
+    .saveTheDate {
+        padding: 22px 30px;
+        border-radius: 18px;
+        width: 90%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .stdLabel {
+        font-size: 0.55rem;
+        letter-spacing: 2px;
+        margin-bottom: 12px;
+    }
+
+    .stdDate {
+        gap: 12px;
+        justify-content: center;
+    }
+
+    .stdDay {
+        font-size: 2.8rem;
+    }
+
+    .stdMonthYear span:first-child {
+        font-size: 1.1rem;
+    }
+
+    .stdMonthYear span:last-child {
+        font-size: 0.85rem;
+    }
+
+    .stdHijri {
+        font-size: 0.8rem;
+        margin-top: 8px;
+    }
+
+    .heroParticles span {
+        width: 4px;
+        height: 4px;
+    }
+}
+
+/* Small devices (landscape phones, small tablets) */
+@media (min-width: 481px) and (max-width: 767px) {
+    .hero {
+        min-height: 100vh;
+        min-height: 100dvh;
+    }
+
+    .heroContent {
+        padding: 30px 25px;
+    }
+
+    .heroTop {
+        margin-bottom: 40px;
+    }
+
+    .heroCenter {
+        margin-bottom: 40px;
+    }
+
+    .coupleNamesWrapper {
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .groomName, .brideName {
+        font-size: 4rem;
+    }
+
+    .namesSeparator {
+        font-size: 2.5rem;
+    }
+
+    .arabicNames {
+        font-size: 1.2rem;
+        margin-top: 12px;
+    }
+
+    .saveTheDate {
+        padding: 28px 45px;
+        border-radius: 20px;
+    }
+
+    .stdDay {
+        font-size: 3.2rem;
+    }
+
+    .heroParticles span {
+        width: 6px;
+        height: 6px;
+    }
+}
+
+/* Medium devices (tablets) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .heroContent {
+        padding: 40px 35px;
+    }
+
+    .heroTop {
+        margin-bottom: 45px;
+    }
+
+    .heroCenter {
+        margin-bottom: 45px;
+    }
+
+    .groomName, .brideName {
+        font-size: 5rem;
+    }
+
+    .namesSeparator {
+        font-size: 3rem;
+    }
+
+    .arabicNames {
+        font-size: 1.4rem;
+    }
+
+    .saveTheDate {
+        padding: 32px 55px;
+    }
+
+    .stdDay {
+        font-size: 4rem;
+    }
+}
+
+/* Large devices (desktops) */
+@media (min-width: 1024px) {
+    .heroContent {
+        padding: 50px 60px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .heroTop {
+        margin-bottom: 55px;
+    }
+
+    .bismillah {
+        font-size: 2.2rem;
+    }
+
+    .bismillahEnglish {
+        font-size: 1rem;
+    }
+
+    .heroCenter {
+        margin-bottom: 55px;
+    }
+
+    .weddingLabel {
+        font-size: 0.85rem;
+        letter-spacing: 6px;
+    }
+
+    .groomName, .brideName {
+        font-size: 5.5rem;
+    }
+
+    .namesSeparator {
+        font-size: 3.5rem;
+    }
+
+    .arabicNames {
+        font-size: 1.6rem;
+        letter-spacing: 6px;
+    }
+
+    .saveTheDate {
+        padding: 35px 60px;
+        border-radius: 25px;
+    }
+
+    .stdDay {
+        font-size: 4.5rem;
+    }
+
+    .stdMonthYear span:first-child {
+        font-size: 1.6rem;
+    }
+
+    .stdMonthYear span:last-child {
+        font-size: 1.1rem;
+    }
+
+    .stdHijri {
+        font-size: 1rem;
+    }
+
+    .heroParticles span {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+/* Landscape orientation on mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        min-height: 100vh;
+        padding: 20px 0;
+    }
+
+    .heroContent {
+        padding: 15px 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .heroTop {
+        margin-bottom: 12px;
+    }
+
+    .heroCenter {
+        margin-bottom: 12px;
+    }
+
+    .heroBottom {
+        margin-bottom: 10px;
+    }
+
+    .bismillah {
+        font-size: 1.1rem;
+        margin-bottom: 3px;
+    }
+
+    .bismillahEnglish {
+        font-size: 0.65rem;
+    }
+
+    .weddingLabel {
+        margin-bottom: 8px;
+        font-size: 0.55rem;
+    }
+
+    .coupleNamesWrapper {
+        flex-direction: row;
+        gap: 15px;
+        margin-bottom: 8px;
+    }
+
+    .groomName, .brideName {
+        font-size: 2.2rem;
+        padding: 3px 12px;
+    }
+
+    .groomName {
+        padding-left: 25px;
+        margin-left: -10px;
+    }
+
+    .namesSeparator {
+        font-size: 1.5rem;
+        display: block;
+    }
+
+    .arabicNames {
+        font-size: 0.85rem;
+        margin-top: 5px;
+    }
+
+    .saveTheDate {
+        padding: 12px 25px;
+        border-radius: 12px;
+    }
+
+    .stdLabel {
+        margin-bottom: 6px;
+        font-size: 0.5rem;
+    }
+
+    .stdDay {
+        font-size: 1.8rem;
+    }
+
+    .stdMonthYear span:first-child {
+        font-size: 0.85rem;
+    }
+
+    .stdMonthYear span:last-child {
+        font-size: 0.7rem;
+    }
+
+    .stdHijri {
+        font-size: 0.65rem;
+        margin-top: 4px;
     }
 }

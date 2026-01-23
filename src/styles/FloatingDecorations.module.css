@@ -1,0 +1,125 @@
+/* Floating Decorations Container */
+.decorationsContainer {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 50;
+    overflow: hidden;
+}
+
+/* Hearts Layer */
+.heartsLayer {
+    position: absolute;
+    inset: 0;
+}
+
+.floatingHeart {
+    position: absolute;
+    color: var(--text-highlight);
+    text-shadow: 0 0 10px rgba(212, 84, 106, 0.5);
+    filter: drop-shadow(0 2px 5px rgba(212, 84, 106, 0.3));
+}
+
+/* Petals Layer */
+.petalsLayer {
+    position: absolute;
+    inset: 0;
+}
+
+.floatingPetal {
+    position: absolute;
+    background: linear-gradient(
+        135deg,
+        var(--pastel-pink) 0%,
+        var(--pastel-pink-dark) 50%,
+        rgba(255, 209, 220, 0.6) 100%
+    );
+    border-radius: 50% 0 50% 50%;
+    box-shadow: 0 2px 8px rgba(212, 84, 106, 0.2);
+}
+
+/* Sparkles Layer */
+.sparklesLayer {
+    position: absolute;
+    inset: 0;
+}
+
+.sparkle {
+    position: absolute;
+    background: radial-gradient(circle, var(--gold) 0%, transparent 70%);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--gold-light);
+}
+
+/* Reduce animations on mobile for performance */
+@media (max-width: 768px) {
+    .heartsLayer .floatingHeart:nth-child(n+8) {
+        display: none;
+    }
+
+    .petalsLayer .floatingPetal:nth-child(n+10) {
+        display: none;
+    }
+
+    .sparklesLayer .sparkle:nth-child(n+12) {
+        display: none;
+    }
+
+    .floatingHeart {
+        font-size: 0.85em;
+    }
+
+    .floatingPetal {
+        transform: scale(0.85);
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    .heartsLayer .floatingHeart:nth-child(n+6) {
+        display: none;
+    }
+
+    .petalsLayer .floatingPetal:nth-child(n+7) {
+        display: none;
+    }
+
+    .sparklesLayer .sparkle:nth-child(n+8) {
+        display: none;
+    }
+
+    .floatingHeart {
+        font-size: 0.75em;
+        text-shadow: 0 0 8px rgba(212, 84, 106, 0.4);
+    }
+
+    .floatingPetal {
+        transform: scale(0.7);
+    }
+
+    .sparkle {
+        transform: scale(0.8);
+    }
+}
+
+/* Very small devices */
+@media (max-width: 360px) {
+    .heartsLayer .floatingHeart:nth-child(n+5) {
+        display: none;
+    }
+
+    .petalsLayer .floatingPetal:nth-child(n+5) {
+        display: none;
+    }
+
+    .sparklesLayer .sparkle:nth-child(n+6) {
+        display: none;
+    }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .decorationsContainer {
+        display: none;
+    }
+}

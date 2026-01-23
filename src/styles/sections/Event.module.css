@@ -198,9 +198,290 @@
     transform: translateX(8px) scale(1.1);
 }
 
-@media (max-width: 768px) {
+/* Extra small devices (phones) */
+@media (max-width: 480px) {
+    .eventSection {
+        padding: 70px 18px;
+    }
+
+    .sectionHeader {
+        margin-bottom: 35px;
+    }
+
+    .sectionSubtitle {
+        font-size: 0.6rem;
+        letter-spacing: 3px;
+    }
+
+    .sectionHeader h2 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+
+    .headerLine {
+        width: 80px;
+        height: 2px;
+    }
+
     .eventsGrid {
         flex-direction: column;
         align-items: center;
+        gap: 20px;
+        padding: 0;
+    }
+
+    .eventCard {
+        min-width: 100%;
+        max-width: 100%;
+        padding: 32px 24px;
+        border-radius: 22px;
+        box-shadow: 0 12px 40px rgba(107, 45, 92, 0.1);
+    }
+
+    .eventCard::before {
+        height: 4px;
+    }
+
+    .eventHeader {
+        margin-bottom: 25px;
+    }
+
+    .eventIcon {
+        width: 55px;
+        height: 55px;
+        padding: 14px;
+        margin-bottom: 18px;
+    }
+
+    .eventHeader h3 {
+        font-size: 1.5rem;
+        margin-bottom: 8px;
+    }
+
+    .eventArabic {
+        font-size: 1.05rem;
+    }
+
+    .eventDetails {
+        margin-bottom: 25px;
+    }
+
+    .detailItem {
+        gap: 14px;
+        margin-bottom: 18px;
+        padding: 10px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.5);
+    }
+
+    .detailItem svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .detailItem strong {
+        font-size: 0.9rem;
+    }
+
+    .detailItem span {
+        font-size: 0.8rem;
+    }
+
+    .btnEvent {
+        padding: 16px 28px;
+        font-size: 0.8rem;
+        border-radius: 28px;
+    }
+
+    .btnEvent svg {
+        width: 17px;
+        height: 17px;
+    }
+}
+
+/* Small devices (landscape phones, small tablets) */
+@media (min-width: 481px) and (max-width: 767px) {
+    .eventSection {
+        padding: 70px 20px;
+    }
+
+    .sectionHeader {
+        margin-bottom: 45px;
+    }
+
+    .eventsGrid {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .eventCard {
+        min-width: 90%;
+        max-width: 400px;
+        padding: 35px 30px;
+    }
+
+    .eventHeader h3 {
+        font-size: 1.4rem;
+    }
+}
+
+/* Medium devices (tablets) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .eventSection {
+        padding: 90px 40px;
+    }
+
+    .sectionHeader {
+        margin-bottom: 50px;
+    }
+
+    .eventsGrid {
+        gap: 35px;
+        max-width: 600px;
+    }
+
+    .eventCard {
+        min-width: 100%;
+        max-width: 500px;
+        padding: 42px 38px;
+    }
+
+    .eventHeader h3 {
+        font-size: 1.5rem;
+    }
+
+    .eventArabic {
+        font-size: 1.05rem;
+    }
+}
+
+/* Large devices (desktops) */
+@media (min-width: 1024px) {
+    .eventSection {
+        padding: 120px 60px;
+    }
+
+    .sectionHeader {
+        margin-bottom: 70px;
+    }
+
+    .sectionSubtitle {
+        font-size: 0.8rem;
+        letter-spacing: 5px;
+    }
+
+    .sectionHeader h2 {
+        font-size: 2.8rem;
+    }
+
+    .headerLine {
+        width: 120px;
+        height: 4px;
+    }
+
+    .eventsGrid {
+        max-width: 600px;
+        gap: 50px;
+    }
+
+    .eventCard {
+        padding: 50px 45px;
+        border-radius: 30px;
+    }
+
+    .eventIcon {
+        width: 70px;
+        height: 70px;
+        padding: 18px;
+        margin-bottom: 25px;
+    }
+
+    .eventHeader h3 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+
+    .eventArabic {
+        font-size: 1.2rem;
+    }
+
+    .eventDetails {
+        margin-bottom: 35px;
+    }
+
+    .detailItem {
+        gap: 18px;
+        margin-bottom: 22px;
+    }
+
+    .detailItem svg {
+        width: 26px;
+        height: 26px;
+    }
+
+    .detailItem strong {
+        font-size: 1.05rem;
+    }
+
+    .detailItem span {
+        font-size: 0.9rem;
+    }
+
+    .btnEvent {
+        padding: 18px 35px;
+        font-size: 0.9rem;
+    }
+
+    .btnEvent svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Landscape orientation on mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .eventSection {
+        padding: 40px 20px;
+    }
+
+    .sectionHeader {
+        margin-bottom: 30px;
+    }
+
+    .sectionHeader h2 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .eventCard {
+        padding: 25px 20px;
+    }
+
+    .eventHeader {
+        margin-bottom: 15px;
+    }
+
+    .eventIcon {
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .eventHeader h3 {
+        font-size: 1.2rem;
+    }
+
+    .eventDetails {
+        margin-bottom: 15px;
+    }
+
+    .detailItem {
+        margin-bottom: 10px;
+    }
+
+    .btnEvent {
+        padding: 12px 20px;
     }
 }

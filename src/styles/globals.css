@@ -1,9 +1,16 @@
 /* ========================================
-   Nikah Wedding Invitation - Global Styles
+   Nikaah Wedding Invitation - Global Styles
    ======================================== */
+
+/* Import Arabic Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Amiri:wght@400;700&display=swap');
 
 /* CSS Variables */
 :root {
+    /* Font Families - Arabic */
+    --font-arabic: 'Aref Ruqaa', serif;
+    --font-arabic-body: 'Amiri', serif;
+
     /* Pastel Colors - Soft & Dreamy */
     --pastel-pink: #FFE4EC;
     --pastel-pink-dark: #FFD1DC;
@@ -68,12 +75,26 @@ html {
 }
 
 body {
+    font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, sans-serif;
     background: linear-gradient(135deg, var(--pastel-cream) 0%, var(--pastel-pink) 50%, var(--pastel-lavender) 100%);
     background-attachment: fixed;
     color: var(--text-dark);
     line-height: 1.7;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+}
+
+/* Typography Classes */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+}
+
+.script-font {
+    font-family: var(--font-script);
+}
+
+.arabic-font {
+    font-family: var(--font-arabic);
 }
 
 /* Global Animation Keyframes */
@@ -116,4 +137,139 @@ body {
 @keyframes pulse {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.5; }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes swing {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(10deg); }
+    75% { transform: rotate(-10deg); }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(0) rotate(0deg);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1) rotate(180deg);
+    }
+}
+
+@keyframes glitter {
+    0%, 100% {
+        box-shadow: 0 0 5px var(--gold), 0 0 10px var(--gold-light);
+    }
+    50% {
+        box-shadow: 0 0 20px var(--gold), 0 0 30px var(--gold-light);
+    }
+}
+
+@keyframes textGlow {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(212, 84, 106, 0.3);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(212, 84, 106, 0.6), 0 0 30px rgba(212, 84, 106, 0.4);
+    }
+}
+
+@keyframes rotateGlow {
+    0% {
+        transform: rotate(0deg);
+        filter: drop-shadow(0 0 5px var(--text-highlight));
+    }
+    100% {
+        transform: rotate(360deg);
+        filter: drop-shadow(0 0 15px var(--text-highlight));
+    }
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0.8);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes zoomPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+}
+
+/* Selection Styling */
+::selection {
+    background: var(--pastel-pink-dark);
+    color: var(--text-primary);
+}
+
+/* Smooth Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--pastel-cream);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--text-highlight), var(--text-accent));
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, var(--text-accent), var(--text-primary));
 }

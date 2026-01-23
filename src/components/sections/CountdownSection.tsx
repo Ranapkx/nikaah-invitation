@@ -1,14 +1,51 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import styles from '@/styles/sections/Countdown.module.css'
+
+const TimeUnit = ({ value, label, delay }: { value: number; label: string; delay: number }) => (
+  <motion.div
+    className={styles.timeUnit}
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ delay }}
+    whileHover={{ scale: 1.1, y: -5 }}
+  >
+    <motion.div
+      className={styles.timeNumberWrapper}
+      animate={{
+        boxShadow: [
+          '0 10px 35px rgba(107, 45, 92, 0.12)',
+          '0 15px 45px rgba(212, 84, 106, 0.2)',
+          '0 10px 35px rgba(107, 45, 92, 0.12)',
+        ],
+      }}
+      transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut', delay }}
+    >
+      <AnimatePresence mode="popLayout">
+        <motion.span
+          key={value}
+          className={styles.timeNumber}
+          initial={{ opacity: 0, y: -20, scale: 0.8 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: 20, scale: 0.8 }}
+          transition={{ duration: 0.3, type: 'spring', stiffness: 200 }}
+        >
+          {String(value).padStart(2, '0')}
+        </motion.span>
+      </AnimatePresence>
+    </motion.div>
+    <span className={styles.timeLabel}>{label}</span>
+  </motion.div>
+)
 
 export default function CountdownSection() {
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 })
 
   useEffect(() => {
-    const weddingDate = new Date(2026, 0, 31, 14, 0, 0)
+    const weddingDate = new Date(2026, 0, 31, 10, 30, 0)
 
     const updateCountdown = () => {
       const now = new Date()
@@ -30,7 +67,7 @@ export default function CountdownSection() {
   }, [])
 
   const addToGoogleCalendar = () => {
-    const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent('Jaseem & Haifa - Nikah Ceremony')}&dates=20260131T140000/20260131T180000&location=${encodeURIComponent('Rose Lounge, Nooradi, Tirur Road, Malappuram, Kerala 676504, India')}&details=${encodeURIComponent('Nikah Ceremony of Jaseem and Haifa.')}`
+    const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent('Jaseem & Haifa - Nikaah Ceremony')}&dates=20260131T103000/20260131T130000&location=${encodeURIComponent('Rose Lounge, Nooradi, Tirur Road, Malappuram, Kerala 676504, India')}&details=${encodeURIComponent('Nikaah Ceremony of Jaseem and Haifa.')}`
     window.open(url, '_blank')
   }
 
@@ -42,6 +79,7 @@ export default function CountdownSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ duration: 0.8, type: 'spring' }}
         >
           Counting Down to Our Special Day
         </motion.h2>
@@ -51,46 +89,38 @@ export default function CountdownSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
+          transition={{ delay: 0.2, duration: 0.6 }}
         >
           Join us as we begin our journey together
         </motion.p>
 
-        <motion.div
-          className={styles.countdownTimer}
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-        >
-          <div className={styles.timeUnit}>
-            <div className={styles.timeNumberWrapper}>
-              <span className={styles.timeNumber}>{String(timeLeft.days).padStart(2, '0')}</span>
-            </div>
-            <span className={styles.timeLabel}>Days</span>
-          </div>
-          <div className={styles.timeSeparator}>:</div>
-          <div className={styles.timeUnit}>
-            <div className={styles.timeNumberWrapper}>
-              <span className={styles.timeNumber}>{String(timeLeft.hours).padStart(2, '0')}</span>
-            </div>
-            <span className={styles.timeLabel}>Hours</span>
-          </div>
-          <div className={styles.timeSeparator}>:</div>
-          <div className={styles.timeUnit}>
-            <div className={styles.timeNumberWrapper}>
-              <span className={styles.timeNumber}>{String(timeLeft.minutes).padStart(2, '0')}</span>
-            </div>
-            <span className={styles.timeLabel}>Minutes</span>
-          </div>
-          <div className={styles.timeSeparator}>:</div>
-          <div className={styles.timeUnit}>
-            <div className={styles.timeNumberWrapper}>
-              <span className={styles.timeNumber}>{String(timeLeft.seconds).padStart(2, '0')}</span>
-            </div>
-            <span className={styles.timeLabel}>Seconds</span>
-          </div>
-        </motion.div>
+        <div className={styles.countdownTimer}>
+          <TimeUnit value={timeLeft.days} label="Days" delay={0.1} />
+          <motion.div
+            className={styles.timeSeparator}
+            animate={{ opacity: [1, 0.5, 1] }}
+            transition={{ duration: 1, repeat: Infinity }}
+          >
+            :
+          </motion.div>
+          <TimeUnit value={timeLeft.hours} label="Hours" delay={0.2} />
+          <motion.div
+            className={styles.timeSeparator}
+            animate={{ opacity: [1, 0.5, 1] }}
+            transition={{ duration: 1, repeat: Infinity, delay: 0.2 }}
+          >
+            :
+          </motion.div>
+          <TimeUnit value={timeLeft.minutes} label="Minutes" delay={0.3} />
+          <motion.div
+            className={styles.timeSeparator}
+            animate={{ opacity: [1, 0.5, 1] }}
+            transition={{ duration: 1, repeat: Infinity, delay: 0.4 }}
+          >
+            :
+          </motion.div>
+          <TimeUnit value={timeLeft.seconds} label="Seconds" delay={0.4} />
+        </div>
 
         <motion.button
           className={styles.btnCalendar}
@@ -98,8 +128,8 @@ export default function CountdownSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
-          whileHover={{ scale: 1.05 }}
+          transition={{ delay: 0.5 }}
+          whileHover={{ scale: 1.05, y: -5, boxShadow: '0 18px 50px rgba(212, 84, 106, 0.5)' }}
           whileTap={{ scale: 0.95 }}
         >
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

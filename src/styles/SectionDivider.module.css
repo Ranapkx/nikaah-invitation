@@ -1,0 +1,118 @@
+/* Section Divider Styles */
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 40px 20px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    transform-origin: center;
+}
+
+/* Hearts Variant */
+.heartsContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.heart {
+    font-size: 1.2rem;
+    color: var(--text-highlight);
+    cursor: pointer;
+    filter: drop-shadow(0 2px 5px rgba(212, 84, 106, 0.3));
+}
+
+.heart:nth-child(2) {
+    font-size: 1.5rem;
+    color: var(--text-accent);
+}
+
+/* Stars Variant */
+.starsContainer {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.star {
+    font-size: 0.8rem;
+    color: var(--gold);
+    filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.5));
+}
+
+.star:nth-child(3) {
+    font-size: 1.2rem;
+    color: var(--text-highlight);
+}
+
+/* Wave Variant */
+.waveDivider {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.waveDivider svg {
+    width: 100%;
+    height: 60px;
+}
+
+/* Ornament Variant */
+.ornamentDivider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 30px 20px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.ornamentLine {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), var(--text-highlight));
+    transform-origin: center;
+}
+
+.ornamentLine:last-child {
+    background: linear-gradient(90deg, var(--text-highlight), var(--gold), transparent);
+}
+
+.ornamentCenter {
+    width: 60px;
+    height: 30px;
+}
+
+.ornamentCenter svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .divider,
+    .ornamentDivider {
+        padding: 25px 15px;
+        gap: 10px;
+    }
+
+    .heart {
+        font-size: 1rem;
+    }
+
+    .heart:nth-child(2) {
+        font-size: 1.3rem;
+    }
+}

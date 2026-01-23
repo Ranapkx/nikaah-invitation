@@ -27,8 +27,8 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: 'Nikah Invitation | Jaseem & Haifa',
-  description: 'You are cordially invited to the Nikah ceremony of Jaseem and Haifa',
+  title: 'Nikaah Invitation | Jaseem & Haifa',
+  description: 'You are cordially invited to the Nikaah ceremony of Jaseem and Haifa',
 }
 
 export default function RootLayout({
